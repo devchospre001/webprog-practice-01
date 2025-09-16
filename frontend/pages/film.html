@@ -1,0 +1,77 @@
+<div class="container mt-3">
+  <div>
+    <table class="table table-striped" id="film-performance">
+      <thead>
+        <tr>
+          <th>Action</th>
+          <th>Category ID</th>
+          <th>Category name</th>
+          <th>Total number of moview</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center">
+            <div class="btn-group" role="group">
+              <button
+                type="button"
+                class="btn btn-warning"
+                onclick="FilmService.edit_film(1)"
+              >
+                Edit
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                onclick="FilmService.delete_film(1)"
+              >
+                Delete
+              </button>
+            </div>
+          </td>
+          <td>1</td>
+          <td>Action</td>
+          <td>64</td>
+        </tr>
+        <tr>
+          <td class="text-center">
+            <div class="btn-group" role="group">
+              <button
+                type="button"
+                class="btn btn-warning"
+                onclick="FilmService.edit_film(2)"
+              >
+                Edit
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                onclick="FilmService.delete_film(2)"
+              >
+                Delete
+              </button>
+            </div>
+          </td>
+          <td>2</td>
+          <td>Animation</td>
+          <td>66</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<!--TODO add modal with edit film form properties -->
+<script>
+  /* 
+    1. Populate the table with id `film-performance` with the data returned
+       from the database. It does not have to be paginated. (5 points)
+    2. Implement the delete logic in the predefined function. (5 points)
+    3. When Edit button is clicked
+      a. fetch the film with clicked id (5 points)
+      b. populate the modal (id `edit-film-modal`) form with data about given film (5 points)
+      d. when user clicks "Save changes" button in the modal persist changes
+         for that film in the database (10 points)
+   */
+</script>

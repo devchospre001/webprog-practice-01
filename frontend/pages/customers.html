@@ -1,0 +1,115 @@
+<div class="container mt-3">
+  <br />
+  <hr />
+  <div>
+    <table class="table table-striped table-bordered" id="customer-details">
+      <thead>
+        <tr>
+          <th>Details</th>
+          <th>Full name</th>
+          <th>Total amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center">
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#customer-details-modal"
+              data-bs-id="@1223"
+            >
+              Details
+            </button>
+          </td>
+          <td>John Doe</td>
+          <td>120.00</td>
+        </tr>
+        <tr>
+          <td class="text-center">
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#customer-details-modal"
+              data-bs-id="@312"
+            >
+              Details
+            </button>
+          </td>
+          <td>Flora Johnson</td>
+          <td>18.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="customer-details-modal"
+  tabindex="-1"
+  aria-labelledby="customer-details-label"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="customer-details-label">Modal title</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Rental date</th>
+              <th scope="col">Film title</th>
+              <th scope="col">Payment amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>2024-02-03</td>
+              <td>Flowers</td>
+              <td>3.20</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>2024-02-06</td>
+              <td>Good morning</td>
+              <td>2.45</td>
+            </tr>
+            <tr>
+              <td colspan="3"><strong>Total bill</strong></td>
+              <td>5.65</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* 
+    1. Populate the table with id `customer-details` with the data returned 
+       from the database. The table has to be fully paginated with search and customer. (10 points)
+    2. When Details button is clicked
+      a. fetch the customer details with clicked id from database (backend) (5 points)
+      b. populate the modal (id `customer-details-modal`) form with data returned from the backend (5 points)
+   */
+</script>
