@@ -112,4 +112,7 @@
       a. fetch the customer details with clicked id from database (backend) (5 points)
       b. populate the modal (id `customer-details-modal`) form with data returned from the backend (5 points)
    */
+  $(document).ready(function() {
+    CustomerService.load_customers();
+  })
 </script>

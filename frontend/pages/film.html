@@ -1,3 +1,4 @@
+<script src="../services/film.js"></script>
 <div class="container mt-3">
   <div>
     <table class="table table-striped" id="film-performance">
@@ -74,4 +75,7 @@
       d. when user clicks "Save changes" button in the modal persist changes
          for that film in the database (10 points)
    */
+  $(document).ready(function() {
+    FilmService.load_categories();
+});
 </script>
