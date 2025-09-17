@@ -17,18 +17,12 @@ class ExamDao
   public function __construct()
   {
     try {
-      /** TODO
-       * List parameters such as servername, username, password, schema. Make sure to use appropriate port
-       */
       $host = "localhost";
-      $db = "finalmakeup";
+      $db = "final-makeup";
       $user = "root";
       $pw = "K3rim123";
       $port = 3306;
 
-      /** TODO
-       * Create new connection
-       */
       if ($this->conn === null) {
         try {
           $this->conn = new PDO(
@@ -40,7 +34,7 @@ class ExamDao
               PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]
           );
-          echo "Connected successfully";
+          // Removed echo to prevent corrupting JSON output
         } catch (PDOException $e) {
           die("Connection failed: " . $e->getMessage());
         }
@@ -53,7 +47,7 @@ class ExamDao
   public function login($data)
   {
     $stmt = $this->conn->prepare(
-      "SELECT id, name, email, password_hash
+      "SELECT id, email, password
       FROM users
       WHERE email = :email LIMIT 1"
     );
@@ -65,11 +59,7 @@ class ExamDao
       return null;
     }
 
-    if (!password_verify($data["password"], $user["password_hash"])) {
-      return null;
-    }
-
-    unset($user["password_hash"]);
+    unset($user["password"]);
     return $user;
 
   }

@@ -3,8 +3,6 @@
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-echo "Routes file loaded successfully\n";
-
 $service = Flight::examService();
 $jwt_secret = "hello";
 

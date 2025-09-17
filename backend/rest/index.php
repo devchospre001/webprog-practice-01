@@ -1,19 +1,20 @@
 <?php
-// This ensures the built-in server serves static files if they exist
-if (php_sapi_name() === 'cli-server') {
-    $url  = parse_url($_SERVER['REQUEST_URI']);
-    $file = __DIR__ . $url['path'];
-    if (is_file($file)) {
-        return false;
-    }
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, Authentication");
+
+// Handle preflight OPTIONS request
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
 }
 
-require "vendor/autoload.php";
-require __DIR__ . "/services/ExamService.php";
-require __DIR__ . '/routes/ExamRoutes.php';
 
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
+require "../vendor/autoload.php";
+require __DIR__ . "/services/ExamService.php";
 
 Flight::register('examService', 'ExamService');
+
+require __DIR__ . '/routes/ExamRoutes.php';
+
 Flight::start();
